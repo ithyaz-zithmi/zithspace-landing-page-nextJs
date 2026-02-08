@@ -1,0 +1,359 @@
+.hero {
+  position: relative;
+  padding: 190px 20px 40px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1000px;
+  height: 800px;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(#e2e8f0, #e2e8f0), linear-gradient(#cbd5e1, #cbd5e1),
+    linear-gradient(#e2e8f0, #e2e8f0), linear-gradient(#cbd5e1, #cbd5e1),
+    linear-gradient(#e2e8f0, #e2e8f0),
+    linear-gradient(to right, rgba(148, 163, 184, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.3) 1px, transparent 1px);
+
+  background-size: 70px 70px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat;
+
+  animation: gridFadeUp 4s ease-out forwards;
+
+  mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+
+  z-index: 1;
+}
+
+@keyframes gridFadeUp {
+  from {
+    opacity: 0;
+
+    background-position:
+      140px 510px,
+      280px 580px,
+      490px 440px,
+      700px 580px,
+      840px 510px,
+      0 10px,
+      0 10px;
+  }
+
+  to {
+    opacity: 1;
+
+    background-position:
+      140px 490px,
+      280px 560px,
+      490px 420px,
+      700px 560px,
+      840px 490px,
+      0 0,
+      0 0;
+  }
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 70px 70px;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.content {
+  text-align: center;
+}
+
+.flagText {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  margin-bottom: 32px;
+  font-size: 14px;
+}
+
+.flagBrand {
+  background: #2563eb;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.title {
+  position: relative;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #1e293b;
+  font-size: clamp(38px, 6vw, 72px);
+  text-align: center;
+}
+
+.titleLine1 {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.staticText {
+  font-weight: 900;
+}
+
+.wordSlot {
+  display: inline-grid;
+  width: 18ch;
+  justify-items: start;
+}
+
+.changingWord {
+  color: #2563eb;
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titleLine2 {
+  margin-top: 12px;
+}
+
+.floatingLabel {
+  position: absolute;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.send {
+  position: absolute;
+  left: 90px;
+  top: 65%;
+}
+
+.sendb {
+  transform: rotate(260deg);
+  position: absolute;
+  right: 115px;
+  top: 82%;
+}
+
+.sendo {
+  position: absolute;
+
+  left: 270px;
+  top: 140%;
+}
+
+.leftLabel {
+  left: -40px;
+  top: 100%;
+  background: #16a34a;
+  color: #fff;
+}
+
+.rightLabel {
+  right: -40px;
+  top: 110%;
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #78350f;
+}
+
+.bottomLabel {
+  left: 20%;
+  bottom: -160px;
+  transform: translateX(-50%);
+  background: #082fa3;
+  color: #fff;
+}
+
+.subtitle {
+  margin: 28px auto 40px;
+  max-width: 620px;
+  font-size: clamp(16px, 2.2vw, 20px);
+  color: #64748b;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 20;
+}
+
+.primaryBtn {
+  background: #2563eb;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  padding: 12px 40px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ctaCard.formMode {
+  max-width: 1100px;
+  text-align: left;
+  padding: 50px;
+}
+
+.contactFormContainer {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.formLeft {
+  flex: 1;
+}
+
+.formRight {
+  flex: 2;
+}
+
+.blueText {
+  color: #2d5bff;
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.formSubtext {
+  color: #667085;
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contactDetails {
+  margin-bottom: 30px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #101828;
+  font-weight: 500;
+}
+
+.formDivider {
+  width: 1px;
+  border-left: 1px dashed #cbd5e1;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.inputGroup label,
+.inputGroupFull label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #101828;
+}
+
+.inputGroup input,
+.inputGroupFull textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+}
+
+.inputGroupFull {
+  margin-top: 20px;
+}
+
+.inputGroupFull textarea {
+  height: 100px;
+  resize: none;
+}
+
+.sendFormBtn {
+  margin-top: 25px;
+  width: 100%;
+  background: #2d5bff;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -30px;
+  right: -20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #64748b;
+}
+
+@media (max-width: 850px) {
+  .contactFormContainer {
+    flex-direction: column;
+  }
+
+  .formDivider {
+    display: none;
+  }
+}

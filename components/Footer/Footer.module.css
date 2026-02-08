@@ -1,0 +1,243 @@
+.footerContainer {
+  position: relative;
+  margin-top: 200px;
+  background: #050a18;
+  border-radius: 125px 125px 0 0;
+}
+
+/* CTA CARD */
+.ctaCard {
+  position: absolute;
+  top: -170px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1900px;
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.ctaTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #101828;
+  margin-bottom: 5px;
+}
+
+.ctaText {
+  color: #667085;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: #2d5bff;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: #2d5bff;
+  border: 2px solid #2d5bff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bgIcon {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.2;
+}
+
+.iconHtml {
+  top: 20px;
+  left: 15%;
+}
+
+.iconAws {
+  bottom: 20px;
+  left: 20%;
+}
+
+.iconPython {
+  top: 60px;
+  right: 15%;
+}
+
+.iconFigma {
+  bottom: 40px;
+  right: 10%;
+}
+
+/* MAIN FOOTER AREA */
+.mainFooter {
+  padding: 45px 40px 40px;
+  color: #ffffff;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+/* THE TOP ROW LOGO + NEWSLETTER */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  /* This pushes them to opposite sides */
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 40px;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logosquar {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.brandName {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.newsletter {
+  background: #ffffff;
+  border-radius: 50px;
+  padding: 6px 6px 6px 25px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  /* Adjust size of email box */
+}
+
+.newsletter input {
+  background: transparent;
+  border: none;
+  flex: 1;
+  outline: none;
+  font-size: 14px;
+  color: #101828;
+}
+
+.newsletter button {
+  background: #2d5bff;
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* LOWER CONTENT WRAPPER */
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 60px;
+}
+
+.brandDesc {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.linkCol h4 {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.linkCol ul {
+  list-style: none;
+  padding: 0;
+}
+
+.linkCol li {
+  color: #94a3b8;
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.linkCol li:hover {
+  color: #2d5bff;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.locationCol h4 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.flagRow {
+  margin-bottom: 15px;
+}
+
+.address {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.bottomBar {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px dashed whitesmoke;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+}
+
+@media (max-width: 600px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

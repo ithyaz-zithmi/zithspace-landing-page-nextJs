@@ -1,0 +1,199 @@
+.container {
+  background-image: url('../../assets/pexels.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 175px 0;
+}
+
+.header {
+  margin-bottom: 80px;
+}
+
+.badge {
+  background: #ffffff;
+  color: #2d5bff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-top: 25px;
+}
+
+.highlight {
+  color: #2d5bff;
+}
+
+.timelineWrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+  min-height: 1200px;
+  /* Adjust based on your content height */
+}
+
+/* THE PROGRESS LINE */
+.lineContainer {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  transform: translateX(-50%);
+  background: transparent;
+  /* ⬅ no gray by default */
+  border-radius: 8px;
+  transition: background 0.4s ease;
+}
+
+.growingLine {
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  /* ⬅ hidden by default */
+  background: linear-gradient(to bottom, #2d5bff, #60a5fa);
+  box-shadow:
+    0 0 20px rgba(45, 91, 255, 0.9),
+    0 0 40px rgba(45, 91, 255, 0.5);
+  border-radius: 8px;
+  transition:
+    height 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.4s ease;
+}
+
+/* THE LOGO BUTTON */
+.movingLogo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: top 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.logoInner {
+  width: 65px;
+  height: 65px;
+  background: black;
+  /* White background makes most logos pop */
+  border: 3px solid #2d5bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Keeps the logo image inside the circle */
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(45, 91, 255, 0.5);
+}
+
+.actualLogo {
+  width: 70%;
+  /* Adjust based on your logo's shape */
+  height: 70%;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.pulseRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #2d5bff;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* FEATURES */
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featureItem {
+  width: 38%;
+  opacity: 0.1;
+  transition: all 0.6s ease;
+}
+
+.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.left {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.right {
+  align-self: flex-end;
+  text-align: left;
+}
+
+/* Kept text left-aligned for readability */
+.center {
+  align-self: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.iconBox {
+  font-size: 75px;
+  color: #2d5bff;
+  margin-bottom: 3px;
+}
+
+.active .iconBox {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(45, 91, 255, 0.6));
+}
+
+.featureTitle {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.active .featureTitle {
+  color: #2d5bff;
+  text-shadow: 0 0 10px rgba(45, 91, 255, 0.3);
+}
+
+.featureDesc {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.6;
+}

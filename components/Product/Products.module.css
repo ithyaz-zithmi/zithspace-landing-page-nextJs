@@ -1,0 +1,367 @@
+/* ================== SECTION ================== */
+/* .sectionContainer {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+} */
+.sectionContainer {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productCard {
+  background-color: #f3f8ff;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 1240px;
+  height: 550px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e2edff;
+}
+
+/* ================== LEFT ================== */
+.textSide {
+  flex: 0.7;
+  padding: 100px 60px;
+  z-index: 5;
+}
+
+.brandTitle {
+  font-size: 58px;
+  color: #2d5bff;
+  font-weight: 800;
+  margin: 0;
+}
+
+.platformSubtitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 15px 0;
+  color: #1a1a1a;
+}
+
+.descriptionText {
+  color: #666;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.exploreButton {
+  margin-top: 35px;
+  padding: 14px 40px;
+  background: transparent;
+  border: 2px solid #2d5bff;
+  color: #2d5bff;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exploreButton:hover {
+  background: #2d5bff;
+  color: #fff;
+}
+
+/* ================== RIGHT ================== */
+.visualSide {
+  flex: 1.3;
+  position: relative;
+  height: 100%;
+
+  /* dynamic accent color */
+  --accent-color: #a855f7;
+}
+
+/* ================== DASHBOARD IMAGE ================== */
+/* ================== DASHBOARD IMAGE ================== */
+.dashboardContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90%;
+  height: 75%;
+  background: #fff;
+  border-radius: 20px 0 0 0;
+
+  /* Dynamic dashed border */
+  /* border: 3px dashed var(--accent-color); */
+  /* Changed from solid #eee */
+
+  z-index: 6;
+  transition:
+    box-shadow 0.6s ease,
+    border-color 0.6s ease;
+
+  box-shadow: -25px 0 60px color-mix(in srgb, var(--accent-color) 45%, transparent);
+}
+
+.dashboardScreenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  /* Slight padding inside the dashed border if needed, but per request likely just border */
+  border-radius: 17px 0 0 0;
+}
+
+/* ================== FLOATING ICONS ================== */
+.iconWrapper {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.iconWrapper.active {
+  transform: scale(1.1);
+}
+
+.iconBox {
+  width: 50px;
+  /* Slightly larger for emphasis */
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  /* Above lines */
+}
+
+/* Icon colors */
+.posPurple .iconBox {
+  background: #a855f7;
+}
+
+.posGreen .iconBox {
+  background: #22c55e;
+}
+
+.posOrange .iconBox {
+  background: #f97316;
+}
+
+.posbule .iconBox {
+  background: #08a6ef;
+}
+
+/* Position 4: Blue (Bottom Left) -> Go Right then Up */
+.posbule::after {
+  content: '';
+  position: absolute;
+
+  left: 48px; /* from right edge of icon */
+  top: -30px; /* move curve upward */
+
+  width: 90px;
+  height: 60px;
+
+  border-bottom: 2px dashed #08a6ef;
+  border-right: 2px dashed #08a6ef;
+  border-radius: 0 0 24px 0;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.posbule.active::after {
+  opacity: 1;
+}
+
+/* ================== CURVED LINES (Side View) ================== */
+/* We replace simple lines with specific curved paths for each position */
+
+.lineVertical,
+.lineHorizontal {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.iconWrapper.active .lineVertical,
+.iconWrapper.active .lineHorizontal {
+  opacity: 1;
+  /* Only show active line */
+}
+
+/* Position 1: Purple (Top Left) -> Go Right then Down */
+/* Icon is 50x50. Start from Right Edge (left: 50px), Vertical Center (top: 25px) */
+.posPurple::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  /* Center Y */
+  left: 48px;
+  /* Right Edge (slight overlap) */
+  width: 80px;
+  height: 60px;
+
+  /* Path: Right -> Curve Down */
+  border-top: 2px dashed #a855f7;
+  border-right: 2px dashed #a855f7;
+  border-radius: 0 20px 0 0;
+
+  transform: none;
+  /* Reset */
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.posPurple.active::after {
+  opacity: 1;
+}
+
+/* Position 2: Green (Top Right) -> Go Left then Down */
+/* Icon is 50x50. Start from Left Edge (right: 50px of wrapper?? No, wrapper size is unknown) */
+/* Wrapper is likely just the box size? If flex. But let's assume centered 50px box */
+/* Use iconBox relative? No, use left/top on wrapper. Wrapper is positioned absolute. */
+/* Safe bet: Start from Center (25px, 25px) and move -25px left */
+.posGreen::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  /* Center Y */
+  right: 48px;
+  /* Left Edge relative to Wrapper Right? NO. Wrapper width is auto. */
+  /* Better: Use Left positioning. If wrapper width is 50px. */
+  left: -10px;
+  /* Start from Left Edge of icon (-ish) */
+
+  width: 60px;
+  height: 80px;
+
+  /* Path: Left -> Curve Down (Actually using border-left implies going left) */
+  /* If left is -10px, border-top goes right? No. */
+  /* Let's try: Start at Left edge (0px), go Left (-width) then Down */
+
+  /* Actually for Green (Top Right), we want it to connect to the top of dashboard which is below it */
+  /* Let's just go Straight Down from Bottom Edge */
+  top: 48px;
+  left: 25px;
+  /* Center X */
+  width: 2px;
+  height: 50px;
+  border: none;
+  border-left: 2px dashed #22c55e;
+  /* Vertical Line */
+  border-radius: 0;
+
+  transform: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.posGreen.active::after {
+  opacity: 1;
+}
+
+/* Position 3: Orange (Bottom Left) -> Go Right then Up */
+/* Icon (50x50). Start from Right Edge (left: 48px), Center Y (25px) */
+.posOrange::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  /* Center Y */
+  left: 48px;
+  /* Right Edge */
+
+  width: 80px;
+  height: 50px;
+
+  /* Path: Right -> Curve Up */
+  /* To curve up, we need border-bottom and border-right, and bottom-right radius */
+  /* And we need to position it "Up" from the start point */
+  /* If top is 25px, and height is 50px. box goes down. */
+  /* We want line to go UP. So box should be *above* the start point. */
+  /* top: -25px (25 - 50) */
+
+  top: -25px;
+
+  border-bottom: 2px dashed #f97316;
+  /* horizontal part at bottom of box (aligns with icon center) */
+  border-right: 2px dashed #f97316;
+  /* vertical up */
+  border-radius: 0 0 20px 0;
+  /* Curve at bottom-right of box */
+
+  transform: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.posOrange.active::after {
+  opacity: 1;
+}
+
+/* Keep existing styles just in case but hide standard lines */
+.lineVertical,
+.lineHorizontal {
+  display: none !important;
+}
+
+/* ================== POSITIONS ================== */
+.posPurple {
+  top: 14%;
+  left: 5%;
+}
+
+.posGreen {
+  top: 8%;
+  right: 65%;
+}
+
+.posOrange {
+  bottom: 25%;
+  left: -2%;
+}
+
+.posbule {
+  bottom: 50%;
+  left: -2%;
+}
+
+.sectionHeader {
+  width: 100%;
+  max-width: 1240px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionBadge {
+  display: inline-block;
+  padding: 8px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  background: #eef4ff;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+.sectionTitle {
+  margin-top: 22px;
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+}
+
+.sectionTitle span {
+  color: #2563eb;
+}
