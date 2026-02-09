@@ -82,3 +82,18 @@ body {
 #product {
   scroll-margin-top: 85px;
 }
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
+  #contact {
+    scroll-margin-top: 150px;
+  }
+
+  #product {
+    scroll-margin-top: 70px;
+  }
+}

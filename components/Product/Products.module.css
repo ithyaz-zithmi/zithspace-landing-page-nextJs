@@ -160,8 +160,10 @@
   content: '';
   position: absolute;
 
-  left: 48px; /* from right edge of icon */
-  top: -30px; /* move curve upward */
+  left: 48px;
+  /* from right edge of icon */
+  top: -30px;
+  /* move curve upward */
 
   width: 90px;
   height: 60px;
@@ -364,4 +366,105 @@
 
 .sectionTitle span {
   color: #2563eb;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 20px 15px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+
+  .sectionBadge {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-top: 16px;
+  }
+
+  .productCard {
+    flex-direction: column;
+    height: auto;
+    border-radius: 32px;
+  }
+
+  .textSide {
+    flex: 1;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  .brandTitle {
+    font-size: 40px;
+  }
+
+  .platformSubtitle {
+    font-size: 20px;
+    margin: 12px 0;
+  }
+
+  .descriptionText {
+    font-size: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .exploreButton {
+    margin-top: 25px;
+    padding: 12px 32px;
+    width: 100%;
+  }
+
+  .visualSide {
+    flex: 1;
+    min-height: 300px;
+  }
+
+  .dashboardContainer {
+    width: 95%;
+    height: 85%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .dashboardScreenshot {
+    border-radius: 17px 17px 0 0;
+  }
+
+  /* Hide floating icons on mobile */
+  .iconWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .textSide {
+    padding: 30px 20px;
+  }
+
+  .brandTitle {
+    font-size: 32px;
+  }
+
+  .platformSubtitle {
+    font-size: 18px;
+  }
+
+  .descriptionText {
+    font-size: 14px;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .productCard {
+    border-radius: 24px;
+  }
 }
