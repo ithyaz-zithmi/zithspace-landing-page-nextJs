@@ -111,8 +111,10 @@
   /* 🔵 exact soft blue glow + depth */
   box-shadow:
     0 0 0 1px rgba(59, 130, 246, 0.15),
-    /* crisp edge */ 0 0 40px rgba(59, 130, 246, 0.25),
-    /* outer glow */ 0 20px 60px rgba(0, 0, 0, 0.75);
+    /* crisp edge */
+    0 0 40px rgba(59, 130, 246, 0.25),
+    /* outer glow */
+    0 20px 60px rgba(0, 0, 0, 0.75);
   /* depth */
 
   transition:
@@ -127,3 +129,69 @@
 }
 
 /* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .aboutCard {
+    padding: 40px 30px;
+    min-height: auto;
+    border-radius: 32px;
+    flex-direction: column;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .ctaButton {
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  /* Show image on mobile below content */
+  .imageWrapper {
+    position: static;
+    transform: none;
+    margin-top: 32px;
+    width: 150px;
+    height: 150px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutCard {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}

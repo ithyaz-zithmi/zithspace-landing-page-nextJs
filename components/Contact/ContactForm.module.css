@@ -8,6 +8,7 @@
   z-index: 20;
   text-align: center;
 }
+
 .badge {
   display: inline-block;
   padding: 8px 18px;
@@ -16,7 +17,7 @@
   border-radius: 999px;
   font-weight: 600;
   margin-bottom: 16px;
-  margin-top: 16px;
+  margin-top: 70px;
 }
 
 .topHeading {
@@ -241,74 +242,182 @@
 @media (max-width: 992px) {
   .contactCard {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
 
   .infoSection {
     padding-right: 0;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
     border-bottom: 1px solid #e5e7eb;
   }
 
   .contactDetails {
     border-bottom: none;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     padding-bottom: 0;
   }
 
   .floatingContainer {
-    margin-top: -120px;
+    margin-top: -100px;
   }
 }
 
 @media (max-width: 768px) {
   .floatingContainer {
-    margin-top: -150px;
+    margin-top: -60px;
     padding: 0 15px;
   }
 
   .contactCard {
-    padding: 30px;
+    padding: 20px 15px;
+    gap: 20px;
+    border-radius: 12px;
+    display: flex;
+    /* Using flex for full control */
+    flex-direction: column;
   }
 
   .topHeading {
-    font-size: 32px;
-    margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
 
-  .mainTitle {
-    font-size: 24px;
-  }
-
-  .gridForm {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .fullWidth {
-    grid-column: span 1;
-  }
-
-  .sendBtn {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 576px) {
-  .topHeading {
-    font-size: 28px;
-  }
-
-  .contactCard {
-    padding: 25px 20px;
-    border-radius: 16px;
+  .badge {
+    margin-top: 40px;
+    margin-bottom: 8px;
+    padding: 5px 12px;
+    font-size: 13px;
   }
 
   .mainTitle {
     font-size: 22px;
+    margin-bottom: 8px;
   }
 
   .subText {
+    margin-bottom: 15px;
     font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .gridForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .inputBox {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .inputBox label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4b5563;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .inputBox input,
+  .inputBox textarea {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+  }
+
+  .inputBox input:focus,
+  .inputBox textarea:focus {
+    background: #fff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  .fullWidth {
+    width: 100%;
+  }
+
+  .sendBtn {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .detailLink {
+    font-size: 13px;
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+
+  .contactDetails {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .infoSection {
+    padding-bottom: 15px;
+  }
+
+  .socialRow {
+    gap: 8px;
+  }
+
+  .socialRow span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floatingContainer {
+    margin-top: -30px;
+    padding: 0 10px;
+  }
+
+  .contactCard {
+    padding: 15px 12px;
+    gap: 15px;
+  }
+
+  .topHeading {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .badge {
+    margin-top: 30px;
+  }
+
+  .mainTitle {
+    font-size: 18px;
+  }
+
+  .subText {
+    font-size: 12px;
+  }
+
+  .gridForm {
+    gap: 10px;
+  }
+
+  .inputBox input,
+  .inputBox textarea {
+    padding: 7px 10px;
+  }
+
+  .inputBox textarea {
+    min-height: 70px;
+  }
+
+  .sendBtn {
+    padding: 10px;
   }
 }

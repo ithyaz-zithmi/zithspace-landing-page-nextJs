@@ -235,9 +235,229 @@
   color: #64748b;
 }
 
-@media (max-width: 600px) {
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .footerContainer {
+    margin-top: 150px;
+    border-radius: 80px 80px 0 0;
+    padding-bottom: 50px;
+  }
+
+  .ctaCard {
+    top: -120px;
+    width: 92%;
+    padding: 40px 25px;
+    border-radius: 32px;
+  }
+
+  .ctaTitle {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .ctaText {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  /* Hide background icons on mobile */
+  .bgIcon {
+    display: none;
+  }
+
+  .mainFooter {
+    padding: 30px 25px 30px;
+  }
+
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    padding-bottom: 30px;
+  }
+
+  .logosquar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brandName {
+    font-size: 26px;
+  }
+
+  .logoRow {
+    gap: 12px;
+  }
+
+  /* Enhanced Newsletter Mobile Styles */
+  .newsletter {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter input {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #101828;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .newsletter input:focus {
+    border-color: #2d5bff;
+    box-shadow: 0 0 0 2px rgba(45, 91, 255, 0.2);
+  }
+
+  .newsletter button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    background: linear-gradient(135deg, #2d5bff, #60a5fa);
+    box-shadow: 0 4px 12px rgba(45, 91, 255, 0.3);
+    transition: transform 0.2s ease;
+  }
+
+  .newsletter button:active {
+    transform: scale(0.98);
+  }
+
+  /* Side-by-Side Links Layout */
   .contentWrapper {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+    text-align: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .contactItem {
+    margin-bottom: 0;
+  }
+
+  .locationCol {
+    grid-column: 1 / -1;
+    text-align: center;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+  }
+
+  .flagRow {
+    display: flex;
+    justify-content: center;
+  }
+
+  .brandDesc {
+    font-size: 13px;
+    max-width: 400px;
+    margin: 0 auto 20px;
+  }
+
+  .contactItem {
+    font-size: 13px;
+  }
+
+  .linkCol h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .linkCol li {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .locationCol h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .address {
+    font-size: 13px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .bottomBar {
+    margin-top: 25px;
+    padding-top: 25px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContainer {
+    margin-top: 120px;
+    border-radius: 50px 50px 0 0;
+  }
+
+  .ctaCard {
+    top: -100px;
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .ctaTitle {
+    font-size: 22px;
+  }
+
+  .ctaText {
+    font-size: 13px;
+  }
+
+  .mainFooter {
+    padding: 25px 20px 25px;
+  }
+
+  .brandName {
+    font-size: 24px;
+  }
+
+  .contentWrapper {
+    gap: 25px 15px;
+  }
+
+  .bottomBar p {
+    font-size: 11px;
+    opacity: 0.7;
   }
 }

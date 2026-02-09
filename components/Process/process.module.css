@@ -125,3 +125,91 @@
   z-index: 1;
   pointer-events: none;
 }
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .header {
+    flex: 1;
+    text-align: center;
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .contactBtn {
+    padding: 14px 32px;
+    width: 100%;
+  }
+
+  .grid {
+    flex: 1;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    height: auto;
+    min-height: 160px;
+    padding: 20px;
+  }
+
+  .iconWrapper {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDesc {
+    font-size: 12px;
+  }
+
+  .bgNumber {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .bgNumber {
+    font-size: 50px;
+  }
+}

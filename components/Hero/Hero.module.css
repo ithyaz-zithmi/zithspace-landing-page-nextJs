@@ -357,3 +357,123 @@
     display: none;
   }
 }
+
+/* Hero Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    padding: 140px 20px 60px;
+  }
+
+  .gridBackground {
+    width: 100%;
+    height: 600px;
+  }
+
+  .flagText {
+    font-size: 12px;
+    padding: 6px 14px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: clamp(32px, 8vw, 48px);
+    padding: 0 10px;
+  }
+
+  .titleLine1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+   
+  }
+
+  .wordSlot {
+    width: auto;
+    justify-items: center;
+  }
+
+  .titleLine2 {
+    margin-top: 12px;
+    
+  }
+
+  /* Hide all floating decorative elements on mobile to prevent overlap */
+  .floatingLabel {
+    display: none;
+  }
+
+  .leftLabel,
+  .rightLabel,
+  .bottomLabel {
+    display: none;
+  }
+
+  /* Hide all floating icons on mobile */
+  .send,
+  .sendb,
+  .sendo {
+    display: none;
+  }
+
+  .subtitle {
+    font-size: clamp(15px, 3.5vw, 18px);
+    margin: 24px auto 36px;
+    padding: 0 15px;
+    max-width: 500px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  .primaryBtn:active,
+  .secondaryBtn:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 120px 15px 50px;
+  }
+
+  .flagText {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .title {
+    font-size: clamp(28px, 9vw, 40px);
+    padding: 0 5px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin: 20px auto 32px;
+    padding: 0 10px;
+  }
+
+  .buttons {
+    padding: 0 15px;
+    gap: 14px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 15px 28px;
+    font-size: 15px;
+  }
+}

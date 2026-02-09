@@ -115,4 +115,142 @@
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
 }
 
+/* Hide by default (Desktop) */
+.mobileBrand {
+  display: none;
+}
+
+/* Show only on mobile */
+
+
+
 /* Responsive Design */
+
+/* Bottom Navigation (Hidden on Desktop) */
+.bottomNav {
+  display: none;
+}
+
+
+
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .navigation {
+    padding: 0.75rem 1rem;
+    top: 10px;
+    width: 95%;
+    border-radius: 30px;
+  }
+
+  .logoImage {
+    height: 40px;
+  }
+
+  .navLink.active {
+    color: #2563eb;
+    font-weight: 600;
+  }
+
+  /* Show contact button in top nav for mobile */
+  .contactBtn {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+  }
+
+  /* Hide desktop menu only */
+  .navList {
+    display: none;
+  }
+
+  /* Show bottom navigation */
+  .bottomNav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(37, 99, 235, 0.1);
+    padding: 8px 5px max(8px, env(safe-area-inset-bottom));
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bottomNavItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 5px;
+    transition: all 0.3s ease;
+    color: #6b7280;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bottomNavIcon {
+    font-size: 22px;
+    transition: all 0.3s ease;
+  }
+
+  .bottomNavLabel {
+    font-size: 9px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .bottomNavItem:active {
+    transform: scale(0.95);
+  }
+
+  .bottomNavActive {
+    color: #2563eb;
+  }
+
+  .bottomNavActive .bottomNavIcon {
+    transform: scale(1.1);
+  }
+
+  .bottomNavActive .bottomNavLabel {
+    font-weight: 700;
+  }
+  .mobileBrand {
+    display: block;
+  }
+}
+
+/* Small Mobile Breakpoint */
+@media (max-width: 480px) {
+  .navigation {
+    padding: 0.6rem 0.8rem;
+    border-radius: 25px;
+  }
+
+  .logoImage {
+    height: 35px;
+  }
+
+  .bottomNavItem,
+  .mobileContactBtn {
+    padding: 6px 4px;
+  }
+
+  .bottomNavIcon {
+    font-size: 20px;
+  }
+
+  .bottomNavLabel {
+    font-size: 8px;
+  }
+}
