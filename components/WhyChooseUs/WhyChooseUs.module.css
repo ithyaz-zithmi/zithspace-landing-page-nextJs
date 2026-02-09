@@ -197,3 +197,113 @@
   font-size: 16px;
   line-height: 1.6;
 }
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 20px;
+    border-radius: 0 0 80px 0;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .badge {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .timelineWrapper {
+    max-width: 100%;
+    min-height: 1000px;
+    padding: 20px 0;
+  }
+
+  /* Keep the center line visible but thinner on mobile */
+  .lineContainer {
+    width: 4px;
+  }
+
+  /* Keep the moving logo visible but smaller on mobile */
+  .movingLogo {
+    display: block;
+  }
+
+  .logoInner {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #2d5bff;
+  }
+
+  .actualLogo {
+    width: 65%;
+    height: 65%;
+  }
+
+  .featuresList {
+    gap: 30px;
+  }
+
+  .featureItem {
+    width: 40%;
+    opacity: 0.3;
+    transition: all 0.6s ease;
+  }
+
+  .featureItem.active {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  .featureItem.left {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .featureItem.right {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .iconBox {
+    font-size: 60px;
+  }
+
+  .featureTitle {
+    font-size: 22px;
+  }
+
+  .featureDesc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 15px;
+    border-radius: 0 0 50px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .iconBox {
+    font-size: 50px;
+  }
+
+  .featureTitle {
+    font-size: 20px;
+  }
+
+  .featureDesc {
+    font-size: 13px;
+  }
+}
