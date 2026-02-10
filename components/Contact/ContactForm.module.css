@@ -239,6 +239,18 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .contactCard {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .floatingContainer {
+    margin-top: -150px;
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 992px) {
   .contactCard {
     grid-template-columns: 1fr;

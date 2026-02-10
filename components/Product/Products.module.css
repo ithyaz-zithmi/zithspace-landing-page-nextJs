@@ -319,7 +319,7 @@
 
 /* ================== POSITIONS ================== */
 .posPurple {
-  top: 14%;
+  top: 10%;
   left: 5%;
 }
 
@@ -366,6 +366,143 @@
 
 .sectionTitle span {
   color: #2563eb;
+}
+
+/* Product Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .productCard {
+    height: auto;
+    flex-direction: column;
+    border-radius: 40px;
+  }
+
+  .textSide {
+    flex: 1;
+    padding: 60px 40px 30px;
+    text-align: center;
+  }
+
+  .sectionTitle {
+    font-size: 38px;
+    margin-top: 15px;
+  }
+
+  .brandTitle {
+    font-size: 40px;
+  }
+
+  .descriptionText {
+    max-width: 100%;
+  }
+
+  .visualSide {
+    flex: 1;
+    min-height: 450px;
+    /* Increased height to accommodate icons */
+    /* Ensure positioned icons are relative to this container */
+    overflow: visible;
+    /* Allow icons to pop out slightly if needed */
+    position: relative;
+    padding-top: 60px;
+  }
+
+  .dashboardContainer {
+    width: 90%;
+    height: 350px;
+    /* Constant height for tablet */
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+     margin-top: 40px;
+  }
+
+  .dashboardScreenshot {
+    border-radius: 17px 17px 0 0;
+  }
+
+  /* Re-enable icons for tablet */
+  .iconWrapper {
+    display: flex;
+    transform: scale(0.9);
+    /* Slightly smaller icons */
+  }
+
+  /* Adjust positions for the stacked layout */
+  .posPurple {
+    top: -20px;
+    left: 12%;
+  }
+
+  .posGreen {
+    top: -26px;
+    right: 68%;
+  }
+
+  .posOrange {
+    bottom: 40%;
+    left: 2%;
+  }
+
+  .posbule {
+    bottom: 70%;
+    /* right: 5%; */
+    left: 2%;
+    /* Override default left */
+  }
+
+
+/* 1. Reset ALL desktop curved lines first */
+  .posPurple::after,
+  .posGreen::after,
+  .posOrange::after,
+  .posbule::after {
+    content: ''; /* Ensure content exists */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: none; /* Clear all desktop borders */
+    border-radius: 0;
+    transform: none;
+    pointer-events: none;
+  }
+
+  /* 2. Horizontal Lines for Blue & Orange (pointing right) */
+  .posbule::after,
+  .posOrange::after {
+    top: 50%;
+    left: 50px; 
+    transform: translateY(-50%);
+    width: 60px;
+    height: 0;
+    border-top: 2px dashed var(--accent-color);
+  }
+
+  /* 3. Vertical Lines for Green & Purple (pointing down) */
+  .posGreen::after,
+  .posPurple::after {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 0;
+    border-left: 2px dashed var(--accent-color);
+  }
+
+  /* 4. Show only when active */
+  .iconWrapper.active::after {
+    opacity: 1;
+  }
+
+
+
+
+
+
+
+
+
+
 }
 
 /* ================= Responsive ================= */

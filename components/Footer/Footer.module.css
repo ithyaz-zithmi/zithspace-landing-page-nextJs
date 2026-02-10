@@ -229,10 +229,56 @@
 .bottomBar {
   margin-top: 30px;
   padding-top: 30px;
+  padding-bottom: 20px;
   border-top: 1px dashed whitesmoke;
   text-align: center;
   font-size: 13px;
   color: #64748b;
+}
+
+/* Footer Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .footerContainer {
+    margin-top: 180px;
+    border-radius: 100px 100px 0 0;
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+  .bottomBar {
+    /* Ensure text isn't right at the edge */
+    padding-bottom: 20px;
+  }
+
+  .ctaCard {
+    top: -140px;
+    padding: 50px 30px;
+  }
+
+  .contentWrapper {
+    /* Keep 4 columns like desktop, but adjust ratios/gap to fit tablet width */
+    grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr;
+    gap: 20px;
+    /* Reduced gap from 60px to fit */
+  }
+
+  .brandCol {
+    /* grid-column: span 2;  <-- Removed to keep it in one column */
+    text-align: left;
+    /* Reset alignment */
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Adjust brand description font size if needed for tight space */
+  .brandDesc {
+    font-size: 13px;
+  }
+
+  .mainFooter {
+    padding: 40px 30px;
+    /* Slightly reduced padding */
+  }
+
+
 }
 
 /* ================= Responsive ================= */
@@ -240,7 +286,8 @@
   .footerContainer {
     margin-top: 150px;
     border-radius: 80px 80px 0 0;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
   }
 
   .ctaCard {
@@ -261,7 +308,8 @@
   }
 
   .ctaButtons {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 12px;
   }
 

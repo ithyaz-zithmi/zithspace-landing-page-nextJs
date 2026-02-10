@@ -134,8 +134,8 @@
 
 
 
-/* Mobile Breakpoint */
-@media (max-width: 768px) {
+/* Tablet & Mobile Breakpoint */
+@media (max-width: 1024px) {
   .navigation {
     padding: 0.75rem 1rem;
     top: 10px;
@@ -160,7 +160,7 @@
     border-radius: 20px;
   }
 
-  /* Hide desktop menu only */
+  /* Hide desktop menu */
   .navList {
     display: none;
   }
@@ -225,6 +225,7 @@
   .bottomNavActive .bottomNavLabel {
     font-weight: 700;
   }
+
   .mobileBrand {
     display: block;
   }

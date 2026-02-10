@@ -170,14 +170,14 @@
   transform: rotate(260deg);
   position: absolute;
   right: 115px;
-  top: 82%;
+  top: 78%;
 }
 
 .sendo {
   position: absolute;
 
   left: 270px;
-  top: 140%;
+  top: 145%;
 }
 
 .leftLabel {
@@ -358,6 +358,150 @@
   }
 }
 
+/* Hero Intermediate Responsiveness (Laptop) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .hero {
+    padding: 160px 20px 40px;
+  }
+
+  .title {
+    font-size: 56px;
+    text-align: center;
+  }
+
+  .titleLine1 {
+    display: flex;
+    /* Changed from inline-grid to flex for better centering control */
+    justify-content: center;
+    align-items: center;
+    /* Ensure vertical alignment */
+    width: 100%;
+    flex-wrap: nowrap;
+    /* Force single line */
+    gap: 12px;
+  }
+
+  /* Fix visual centering by removing fixed width slot */
+  .wordSlot {
+    width: auto;
+    display: block;
+  }
+
+  /* Compact floating elements */
+  .send {
+    left: 115px;
+    top: 63%;
+    transform: scale(0.9);
+  }
+
+  .sendb {
+    right: 140px;
+    top: 75%;
+    transform: rotate(260deg) scale(0.9);
+  }
+
+  .sendo {
+    left: 255px;
+    top: 150%;
+    transform: scale(0.9);
+  }
+
+  .leftLabel {
+    left: -20px;
+  }
+
+  .rightLabel {
+    right: -20px;
+  }
+
+  .bottomLabel {
+    bottom: -140px;
+  }
+}
+
+/* Hero Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 160px 20px 180px;
+    /* Added bottom padding for floating elements */
+  }
+
+  .title {
+    font-size: clamp(34px, 5.5vw, 52px);
+    text-align: center;
+  }
+
+  .titleLine1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* Force single line on tablet too */
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* Fix visual centering by removing fixed width slot */
+  .wordSlot {
+    width: auto;
+    display: block;
+  }
+
+  .subtitle {
+    margin: 24px auto 36px;
+    font-size: 18px;
+  }
+
+  /* Make floating elements visible but adjust position */
+  .send {
+    display: block;
+    left: 120px;
+    top: 90%;
+    /* Adjusted top */
+    transform: scale(0.8);
+    /* Scale down slightly */
+  }
+
+  .sendb {
+    display: block;
+    right: 130px;
+    top: 90%;
+    /* Adjusted top */
+    transform: rotate(260deg) scale(0.8);
+  }
+
+  .sendo {
+    display: block;
+    left: 23%;
+    top: 170%;
+    /* Move it below everything */
+    transform: scale(0.8);
+  }
+
+  .leftLabel {
+    display: block;
+    left: 0;
+    top: 120%;
+    /* Push down */
+    font-size: 12px;
+  }
+
+  .rightLabel {
+    display: block;
+    right: 0;
+    top: 125%;
+    /* Push down */
+    font-size: 12px;
+  }
+
+  .bottomLabel {
+    display: block;
+    bottom: -150px;
+    /* Adjust bottom */
+    font-size: 12px;
+  }
+}
+
 /* Hero Mobile Responsiveness */
 @media (max-width: 768px) {
   .hero {
@@ -386,7 +530,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-   
+
   }
 
   .wordSlot {
@@ -396,7 +540,7 @@
 
   .titleLine2 {
     margin-top: 12px;
-    
+
   }
 
   /* Hide all floating decorative elements on mobile to prevent overlap */
