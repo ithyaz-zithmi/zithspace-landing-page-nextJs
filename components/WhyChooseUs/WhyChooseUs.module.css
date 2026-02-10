@@ -198,6 +198,29 @@
   line-height: 1.6;
 }
 
+/* WhyChooseUs Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .container {
+    padding: 80px 20px;
+  }
+
+  .timelineWrapper {
+    max-width: 800px;
+    /* Keep consistent with desktop max-width */
+  }
+
+  /* Make sure items are still roughly the same width as desktop so they alternate nicely */
+  .featureItem {
+    width: 40%;
+    /* Slightly more than desktop's 38% but not too wide */
+  }
+
+  .title {
+    font-size: 34px;
+    margin-top: 15px;
+  }
+}
+
 /* ================= Responsive ================= */
 
 @media (max-width: 768px) {
