@@ -20,7 +20,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className={styles.hero}>
+    <section id="home" className={styles.hero}>
       <div className={styles.gridBackground} />
 
       <div className={styles.container}>
