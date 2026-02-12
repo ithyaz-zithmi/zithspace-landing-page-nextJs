@@ -67,7 +67,7 @@ const Services = () => {
               <div className={styles.content}>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
-                <button className={styles.btn}>Learn more</button>
+                {/* <button className={styles.btn}>Learn more</button> */}
               </div>
 
               <div

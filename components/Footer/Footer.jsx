@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import styles from './Footer.module.css';
 import logoImage from '@/assets/logo.svg';
 import ContactForm from '../Contact/ContactForm';
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -51,25 +52,50 @@ const Footer = () => {
           <div className={styles.linkCol}>
             <h4>Quick Link</h4>
             <ul>
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Service</li>
-              <li>Product</li>
-              <li>Process</li>
-              <li>Contact Us</li>
-            </ul>
+              <li><Link href="/#home">home</Link></li>
+  <li><Link href="/#about">About Us</Link></li>
+<li><Link href="/#service">Service</Link></li>
+<li><Link href="/#product">Product</Link></li>
+<li><Link href="/#process">Process</Link></li>
+<li><Link href="/#contact">Contact Us</Link></li>
+
+</ul>
+
           </div>
 
           {/* Socials */}
+
+
           <div className={styles.linkCol}>
-            <h4>Join Us</h4>
-            <div className={styles.socialLink}>
-              <Icon icon="mdi:linkedin" color="#0077B5" /> LinkedIn
-            </div>
-            <div className={styles.socialLink}>
-              <Icon icon="mdi:instagram" color="#E4405F" /> Instagram
-            </div>
-          </div>
+  <h4>Join Us</h4>
+
+  <a
+    href="https://www.linkedin.com/company/zithtech/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.socialLink}
+  >
+    <Icon icon="mdi:linkedin" color="#0077B5" />
+    LinkedIn
+  </a>
+
+  <div className={styles.socialLink}>
+    <Icon icon="mdi:instagram" color="#E4405F" /> Instagram
+  </div>
+
+  {/* <a
+    href="https://www.instagram.com/your-instagram"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.socialLink}
+  >
+    <Icon icon="mdi:instagram" color="#E4405F" />
+    Instagram
+  </a> */}
+
+
+</div>
+
 
           {/* Location */}
           <div className={styles.locationCol}>

@@ -190,6 +190,17 @@
   padding: 0;
 }
 
+.linkCol ul li a {
+  text-decoration: none;
+  color: #94a3b8;
+  transition: 0.3s ease;
+}
+
+.linkCol ul li a:hover {
+  color: #4a0eef;
+}
+
+
 .linkCol li {
   color: #94a3b8;
   margin-bottom: 12px;
@@ -202,14 +213,29 @@
   color: #2d5bff;
 }
 
-.socialLink {
+/* .socialLink {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
   color: #94a3b8;
   cursor: pointer;
+} */
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  margin-bottom: 15px;
+  color: #94a3b8;
+  cursor: pointer;
 }
+
+.socialLink:hover {
+  color:#4a0eef
+}
+
 
 .locationCol h4 {
   font-size: 18px;

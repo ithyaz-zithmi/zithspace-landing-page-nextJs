@@ -122,16 +122,36 @@ const ContactForm = () => {
           </div>
 
           <div className={styles.joinUsSection}>
-            <h3 className={styles.joinTitle}>Join Us</h3>
-            <div className={styles.socialRow}>
-              <span>
-                <Icon icon="mdi:linkedin" color="#0077B5" /> LinkedIn
-              </span>
-              <span>
+  <h3 className={styles.joinTitle}>Join Us</h3>
+
+  <div className={styles.socialRow}>
+    <a
+      href="https://www.linkedin.com/company/zithtech/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.socialLink}
+    >
+      <Icon icon="mdi:linkedin" color="#0077B5" />
+      LinkedIn
+    </a>
+
+    {/* <a
+      href="https://www.instagram.com/your-instagram"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.socialLink}
+    >
+      <Icon icon="mdi:instagram" color="#E4405F" />
+      Instagram
+    </a> */}
+    <span>
                 <Icon icon="mdi:instagram" color="#E4405F" /> Instagram
               </span>
-            </div>
-          </div>
+
+
+  </div>
+</div>
+
         </div>
 
         {/* Right Section: Form */}

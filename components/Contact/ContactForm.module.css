@@ -115,6 +115,22 @@
   font-size: 20px;
 }
 
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.socialLink:hover {
+  opacity: 0.8;
+  color:#2563eb
+}
+
+
 /* Form Section - Cleaner design */
 .formSection {
   padding: 0;

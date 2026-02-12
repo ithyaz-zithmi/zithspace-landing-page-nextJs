@@ -3,7 +3,9 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { StarFilled } from '@ant-design/icons';
-import ceoimg from '@/assets/ceo.jpeg';
+// import ceoimg from '@/assets/ceo.jpeg';
+import { UsergroupAddOutlined } from '@ant-design/icons';
+
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -20,10 +22,10 @@ const reviews = [
   {
     id: 3,
     name: 'Raj Kumar',
-    role: 'CEO of J2B Global',
+    role: 'J2B Global',
     stars: 4,
     text: 'Excellent support and a robust platform. It scales perfectly with our business growth. A true all-in-one solution.',
-    avatar: ceoimg,
+    // avatar: ceoimg,
   },
 ];
 
@@ -56,9 +58,13 @@ const Testimonials = () => {
               <div className={styles.starsRow}>{renderStars(review.stars)}</div>
               <p className={styles.quote}>&ldquo;{review.text}&rdquo;</p>
               <div className={styles.authorArea}>
-                <div className={styles.avatar}>
+                {/* <div className={styles.avatar}>
                   <Image src={review.avatar} alt={review.name} />
-                </div>
+                </div> */}
+                <div className={styles.avatar}>
+  <UsergroupAddOutlined className={styles.avatarIcon} />
+</div>
+
                 <div className={styles.info}>
                   <h4 className={styles.name}>{review.name}</h4>
                   <p className={styles.role}>{review.role}</p>
