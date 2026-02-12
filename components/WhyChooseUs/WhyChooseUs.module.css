@@ -1,6 +1,6 @@
 /* ===== Outer scroll-room wrapper ===== */
 .stickyOuter {
-  height: 600vh;
+  height: 400vh;
   position: relative;
 }
 
@@ -231,7 +231,7 @@
 /* ================= Tablet ================= */
 @media (max-width: 1024px) {
   .stickyOuter {
-    height: 500vh;
+    height: 350vh;
   }
 
   .container {
@@ -251,7 +251,7 @@
 /* ================= Mobile ================= */
 @media (max-width: 768px) {
   .stickyOuter {
-    height: 450vh;
+    height: 300vh;
   }
 
   .container {
@@ -322,7 +322,7 @@
 
 @media (max-width: 480px) {
   .stickyOuter {
-    height: 400vh;
+    height: 280vh;
   }
 
   .container {
