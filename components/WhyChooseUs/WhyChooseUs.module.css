@@ -1,20 +1,30 @@
+/* ===== Outer scroll-room wrapper ===== */
+.stickyOuter {
+  height: 600vh;
+  position: relative;
+}
+
+/* ===== Pinned inner section ===== */
 .container {
   background-image: url('../../assets/pexels.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 
   color: white;
-  padding: 100px 20px;
+  padding: 60px 20px 80px;
   text-align: center;
-  position: relative;
+  position: sticky;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
-  border-radius: 0 0 175px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  flex-shrink: 0;
 }
 
 .badge {
@@ -35,41 +45,41 @@
   color: #2d5bff;
 }
 
+/* ===== Timeline area — fills remaining viewport height ===== */
 .timelineWrapper {
   position: relative;
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-  padding: 40px 0;
-  min-height: 1200px;
-  /* Adjust based on your content height */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* THE PROGRESS LINE */
 .lineContainer {
   position: absolute;
   left: 50%;
-  top: 0;
-  bottom: 0;
+  top: 10%;
+  bottom: 10%;
   width: 6px;
   transform: translateX(-50%);
-  background: transparent;
-  /* ⬅ no gray by default */
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  transition: background 0.4s ease;
 }
 
 .growingLine {
   width: 100%;
   height: 0;
   opacity: 0;
-  /* ⬅ hidden by default */
   background: linear-gradient(to bottom, #2d5bff, #60a5fa);
   box-shadow:
     0 0 20px rgba(45, 91, 255, 0.9),
     0 0 40px rgba(45, 91, 255, 0.5);
   border-radius: 8px;
   transition:
-    height 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.4s ease;
 }
 
@@ -77,27 +87,26 @@
 .movingLogo {
   position: absolute;
   left: 50%;
+  top: 10%;
   transform: translate(-50%, -50%);
   z-index: 10;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: top 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logoInner {
   width: 65px;
   height: 65px;
   background: black;
-  /* White background makes most logos pop */
   border: 3px solid #2d5bff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* Keeps the logo image inside the circle */
   position: relative;
   z-index: 2;
   box-shadow: 0 0 20px rgba(45, 91, 255, 0.5);
@@ -105,7 +114,6 @@
 
 .actualLogo {
   width: 70%;
-  /* Adjust based on your logo's shape */
   height: 70%;
   object-fit: contain;
   filter: invert(1);
@@ -127,53 +135,72 @@
     transform: scale(1);
     opacity: 1;
   }
-
   100% {
     transform: scale(1.8);
     opacity: 0;
   }
 }
 
-/* FEATURES */
+/* ===== FEATURES — only active card is visible ===== */
 .featuresList {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
 }
 
 .featureItem {
+  position: absolute;
   width: 38%;
-  opacity: 0.1;
-  transition: all 0.6s ease;
+  opacity: 0;
+  transform: translateY(40px) scale(0.92);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  top: 10px;
 }
 
 .active {
   opacity: 1;
-  transform: scale(1.1);
+  transform: translateY(0) scale(1.05);
+  pointer-events: auto;
 }
 
 .left {
-  align-self: flex-start;
+  left: 0;
   text-align: left;
 }
 
 .right {
-  align-self: flex-end;
+  right: 0;
   text-align: left;
 }
 
-/* Kept text left-aligned for readability */
-.center {
-  align-self: center;
+/* Zithtech Assure — sits below the timeline in the section flex column */
+.bottomFeature {
+  flex-shrink: 0;
   text-align: center;
-  width: 100%;
-  margin-top: 50px;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.bottomFeature.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .iconBox {
   font-size: 75px;
   color: #2d5bff;
   margin-bottom: 3px;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
 }
 
 .active .iconBox {
@@ -185,6 +212,7 @@
   font-size: 26px;
   font-weight: 800;
   margin-bottom: 10px;
+  transition: color 0.4s ease;
 }
 
 .active .featureTitle {
@@ -198,21 +226,20 @@
   line-height: 1.6;
 }
 
-/* WhyChooseUs Tablet Responsiveness */
+/* ===== Step indicator dots ===== */
+
+/* ================= Tablet ================= */
 @media (max-width: 1024px) {
+  .stickyOuter {
+    height: 500vh;
+  }
+
   .container {
-    padding: 80px 20px;
+    padding: 50px 20px 60px;
   }
 
-  .timelineWrapper {
-    max-width: 800px;
-    /* Keep consistent with desktop max-width */
-  }
-
-  /* Make sure items are still roughly the same width as desktop so they alternate nicely */
   .featureItem {
-    width: 40%;
-    /* Slightly more than desktop's 38% but not too wide */
+    width: 42%;
   }
 
   .title {
@@ -221,16 +248,18 @@
   }
 }
 
-/* ================= Responsive ================= */
-
+/* ================= Mobile ================= */
 @media (max-width: 768px) {
+  .stickyOuter {
+    height: 450vh;
+  }
+
   .container {
-    padding: 60px 20px;
-    border-radius: 0 0 80px 0;
+    padding: 40px 16px 50px;
   }
 
   .header {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   .badge {
@@ -243,20 +272,8 @@
     margin-top: 20px;
   }
 
-  .timelineWrapper {
-    max-width: 100%;
-    min-height: 1000px;
-    padding: 20px 0;
-  }
-
-  /* Keep the center line visible but thinner on mobile */
   .lineContainer {
     width: 4px;
-  }
-
-  /* Keep the moving logo visible but smaller on mobile */
-  .movingLogo {
-    display: block;
   }
 
   .logoInner {
@@ -270,29 +287,20 @@
     height: 65%;
   }
 
-  .featuresList {
-    gap: 30px;
-  }
-
   .featureItem {
-    width: 40%;
-    opacity: 0.3;
-    transition: all 0.6s ease;
+    width: 42%;
   }
 
   .featureItem.active {
-    opacity: 1;
-    transform: scale(1.05);
+    transform: translateY(0) scale(1.03);
   }
 
   .featureItem.left {
-    align-self: flex-start;
-    text-align: left;
+    left: 0;
   }
 
   .featureItem.right {
-    align-self: flex-end;
-    text-align: right;
+    right: 0;
   }
 
   .iconBox {
@@ -306,12 +314,19 @@
   .featureDesc {
     font-size: 14px;
   }
+
+  .featuresList {
+    height: 200px;
+  }
 }
 
 @media (max-width: 480px) {
+  .stickyOuter {
+    height: 400vh;
+  }
+
   .container {
-    padding: 40px 15px;
-    border-radius: 0 0 50px 0;
+    padding: 30px 12px 40px;
   }
 
   .title {
@@ -328,5 +343,9 @@
 
   .featureDesc {
     font-size: 13px;
+  }
+
+  .featuresList {
+    height: 180px;
   }
 }
